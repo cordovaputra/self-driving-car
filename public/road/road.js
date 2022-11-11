@@ -11,6 +11,14 @@ class Road{
         this.top= -infinity;
         this.bottom = infinity;
     }
+
+    // Make sure car is always in the center of the lane
+    getLaneCenter(laneIndex) {
+        const laneWidth = this.width/this.laneCount;
+        return this.left+laneWidth/2+
+            Math.min(laneIndex, this.laneCount-1) *laneWidth;
+    }
+
     draw(ctx){
         ctx.lineWidth=5;
         ctx.strokeStyle="white";
@@ -22,6 +30,12 @@ class Road{
                 this.right,
                 i/this.laneCount
             );
+
+            if(i > 0 && i < this.laneCount){
+                ctx.setLineDash([20,20]);
+            } else {
+                ctx.setLineDash([])
+            }
             ctx.beginPath();
             ctx.moveTo(x, this.top);
             ctx.lineTo(x, this.bottom);
