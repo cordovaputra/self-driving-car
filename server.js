@@ -11,8 +11,6 @@ app.use('/car', express.static(__dirname + 'public/car'));
 app.use('/road', express.static(__dirname + 'public/road'));
 app.use('/utils', express.static(__dirname + 'public/utils'));
 
-
-
 // Listen to HTML
 app.get('', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
