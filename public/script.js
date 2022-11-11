@@ -22,9 +22,9 @@ function animate(){
 
     road.draw(ctx);
     for(let i=0; i< traffic.length; i++) {
-        traffic[i].draw(ctx);
+        traffic[i].draw(ctx, "blue");
     }
-    car.draw(ctx);
+    car.draw(ctx, "green");
 
     ctx.restore();
     requestAnimationFrame(animate);
