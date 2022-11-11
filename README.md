@@ -1,4 +1,4 @@
-# self-driving-car
+# self-driving-car-simulator
 WebML Marathon Project - Creating a Self-Driving Car simulation in Javascript, HTML and CSS without any libraries. 
 
 ## How to run and test this project?
