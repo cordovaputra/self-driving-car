@@ -8,6 +8,10 @@ body {
     margin:0;
 }
 
-#canvas {
+#carCanvas {
     background: lightgray;
+}
+
+#aiCanvas {
+    background: black;
 }
