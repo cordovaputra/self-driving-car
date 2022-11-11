@@ -14,7 +14,8 @@ class Sensor{
                 this.raySpread/2,
                 -this.raySpread/2,
                 i/(this.rayCount-1)
-            );
+            ) + this.car.angle;
+
             const start = {x: this.car.x, y:this.car.y};
             const end = {
                 x: this.car.x-Math.sin(rayAngle)*this.rayLength,
@@ -27,7 +28,7 @@ class Sensor{
         for(let i=0; i<this.rayCount;i++) {
             ctx.beginPath();
             ctx.lineWidth = 2; 
-            ctx.strokeStyle="yellow";
+            ctx.strokeStyle="transparent";
             ctx.moveTo(
                 this.rays[i][0].x,
                 this.rays[i][0].y 
