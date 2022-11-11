@@ -16,9 +16,9 @@ class Car {
   }
 
   //Adding controls to play around with the car!
-  update() {
+  update(roadBorders) {
     this.#carMovement();
-    this.sensor.update();
+    this.sensor.update(roadBorders);
   }
 
   #carMovement() {
