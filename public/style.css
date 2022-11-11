@@ -8,6 +8,10 @@ body {
     margin:0;
 }
 
+p{
+    text-size: 20px;
+}
+
 #carCanvas {
     background: lightgray;
 }
