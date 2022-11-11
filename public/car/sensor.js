@@ -1,19 +1,23 @@
 class Sensor{
     constructor(car){ //sensor is attached to the car
         this.car = car; 
-        this.rayCount = 3; 
-        this.rayLength = 100;
-        this.raySpread = Math.PI/4;
+        this.rayCount = 5; 
+        this.rayLength = 150;
+        this.raySpread = Math.PI/2;
         this.rays = [];
     }
 
     update(){
+        this.#castRays();
+    }
+    
+    #castRays(){
         this.rays = [];
         for(let i=0; i < this.rayCount; i++) {
             const rayAngle = lerp(
                 this.raySpread/2,
                 -this.raySpread/2,
-                i/(this.rayCount-1)
+                this.rayCount==1 ? 0.5: i/(this.rayCount-1)
             ) + this.car.angle;
 
             const start = {x: this.car.x, y:this.car.y};
@@ -24,11 +28,12 @@ class Sensor{
             this.rays.push([start, end]);
         } 
     }
+
     draw(ctx){
         for(let i=0; i<this.rayCount;i++) {
             ctx.beginPath();
             ctx.lineWidth = 2; 
-            ctx.strokeStyle="transparent";
+            ctx.strokeStyle="yellow";
             ctx.moveTo(
                 this.rays[i][0].x,
                 this.rays[i][0].y 
