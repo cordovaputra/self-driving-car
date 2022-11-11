@@ -1,0 +1,35 @@
+{
+  "name": "self-driving-car",
+  "version": "1.0.0",
+  "description": "WebML Marathon Project - Creating a Self-Driving Car simulation in Javascript, HTML and CSS without any libraries.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cordovaputra/self-driving-car.git"
+  },
+  "keywords": [
+    "Machine",
+    "Learning",
+    "Artificial",
+    "Intelligence",
+    "Self-Driving",
+    "Car",
+    "Javascript"
+  ],
+  "author": "Cordova Putra Handri Ansyah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cordovaputra/self-driving-car/issues"
+  },
+  "homepage": "https://github.com/cordovaputra/self-driving-car#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
