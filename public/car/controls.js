@@ -1,10 +1,18 @@
 class Controls{
-    constructor(){
+    constructor(type){
         this.forward = false; 
         this.left = false; 
         this.right = false; 
         this.reverse = false;
-        this.#addKeyboardListeners(); //Detect when keyboard is pressed with private method
+
+        switch(type){
+            case "KEYS":
+                this.#addKeyboardListeners();
+                break; 
+            case "DUMMY":
+                this.forward = true; 
+                break;
+        }
 
     }
     #addKeyboardListeners(){
