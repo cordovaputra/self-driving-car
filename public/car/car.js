@@ -19,21 +19,26 @@ class Car {
   }
 
   //Adding controls to play around with the car!
-  update(roadBorders) {
+  update(roadBorders, traffic) {
     if(!this.collision) {
         this.#carMovement();
         this.polygon = this.#createPolygon();
-        this.collision = this.#detectCollision(roadBorders);
+        this.collision = this.#detectCollision(roadBorders, traffic);
     }
     if(this.sensor){
-        this.sensor.update(roadBorders);
+        this.sensor.update(roadBorders, traffic);
     }
   }
 
   //Assess Damage / Detect Collision
-  #detectCollision(roadBorders){
+  #detectCollision(roadBorders, traffic){
     for(let i=0; i < roadBorders.length; i++){
         if(polysIntersect(this.polygon, roadBorders[i])) {
+            return true;
+        }
+    }
+    for(let i=0; i < traffic.length; i++){
+        if(polysIntersect(this.polygon, traffic[i].polygon)) {
             return true;
         }
     }
