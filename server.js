@@ -7,7 +7,10 @@ const server = http.createServer(app)
 app.use(express.static('public'));
 app.use('/css', express.static(__dirname + 'public/css'));
 app.use('/javascript', express.static(__dirname + 'public/javascript'));
-app.use('/image', express.static(__dirname + 'public/image'));
+app.use('/car', express.static(__dirname + 'public/car'));
+app.use('/road', express.static(__dirname + 'public/road'));
+app.use('/utils', express.static(__dirname + 'public/utils'));
+
 
 
 // Listen to HTML
