@@ -10,8 +10,14 @@ car.draw(ctx);
 function animate(){
     car.update();
     canvas.height = window.innerHeight;
+    ctx.save();
+
+    ctx.translate(0, -car.y); //Add camera effect that follows the car
+
     road.draw(ctx);
     car.draw(ctx);
+
+    ctx.restore();
     requestAnimationFrame(animate);
 }
 animate();
