@@ -19,9 +19,11 @@ class Car {
 
   //Adding controls to play around with the car!
   update(roadBorders) {
-    this.#carMovement();
-    this.polygon = this.#createPolygon();
-    this.collision = this.#detectCollision(roadBorders);
+    if(!this.collision) {
+        this.#carMovement();
+        this.polygon = this.#createPolygon();
+        this.collision = this.#detectCollision(roadBorders);
+    }
     this.sensor.update(roadBorders);
   }
 
