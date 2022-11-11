@@ -10,6 +10,8 @@ app.use('/javascript', express.static(__dirname + 'public/javascript'));
 app.use('/car', express.static(__dirname + 'public/car'));
 app.use('/road', express.static(__dirname + 'public/road'));
 app.use('/utils', express.static(__dirname + 'public/utils'));
+app.use('/ai', express.static(__dirname + 'public/ai'));
+
 
 // Listen to HTML
 app.get('', (req, res) => {
